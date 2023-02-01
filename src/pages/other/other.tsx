@@ -29,7 +29,7 @@ export const Other = () => {
       transition={{ duration: 0.64 }}
       className={st.other_page}
     >
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isLoading && (
           <motion.div
             exit={{ opacity: 0 }}
@@ -40,12 +40,17 @@ export const Other = () => {
         {isLoading ? (
           <motion.div
             key="first"
-            initial={{ right: "50%", bottom: "50%" }}
+            initial={{
+              right: "50%",
+              bottom: "50%",
+              transform: "translate(50%, 50%)",
+            }}
             exit={{
               right: "8rem",
               bottom: "8rem",
               left: "auto",
               top: "auto",
+
               background: "var(--surface)",
             }}
             className={st.loading_as_button_wrap}
