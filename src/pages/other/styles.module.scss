@@ -1,0 +1,47 @@
+@use "../../shared/modules/funcs.module";
+
+.other_page {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.loader_modal {
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--background);
+}
+
+.loading_as_button_wrap {
+  z-index: 20;
+  position: absolute;
+  width: funcs.px-rem(88);
+  height: funcs.px-rem(88);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.img_wrapper {
+  padding: funcs.px-rem(8);
+  width: 100%;
+  height: 100%;
+
+  & > * {
+    object-fit: contain;
+  }
+}
+
+.window {
+  width: 100vw;
+  height: 100vh;
+}
+
+.link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}

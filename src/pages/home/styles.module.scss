@@ -1,0 +1,117 @@
+@use "../../shared/modules/funcs.module";
+@use "../../shared/modules/breakpoints.module";
+
+.page {
+  display: flex;
+  flex-direction: column;
+  background: url("../../shared/assets/media/svg/bg.svg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding: funcs.px-rem(128) 0;
+}
+
+.action_section {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.action_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.action_wrap__welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoints.media-screen(breakpoints.$xs) {
+    margin-bottom: funcs.px-rem(64);
+
+    .welcome__logo_wrapper {
+      margin-bottom: funcs.px-rem(32);
+      width: funcs.px-rem(128);
+      height: funcs.px-rem(128);
+    }
+
+    .welcome_title {
+      font-size: funcs.px-rem(32);
+    }
+  }
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    margin-bottom: funcs.px-rem(64);
+
+    .welcome__logo_wrapper {
+      margin-bottom: funcs.px-rem(32);
+      width: funcs.px-rem(256);
+      height: funcs.px-rem(256);
+    }
+
+    .welcome_title {
+      font-size: funcs.px-rem(48);
+    }
+  }
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    margin-bottom: funcs.px-rem(64);
+
+    .welcome__logo_wrapper {
+      margin-bottom: funcs.px-rem(32);
+      width: funcs.px-rem(256);
+      height: funcs.px-rem(256);
+    }
+  }
+}
+
+.welcome__logo_wrapper {
+  margin-bottom: funcs.px-rem(32);
+}
+
+.logo_img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.welcome_title {
+  font-size: funcs.px-rem(48);
+  font-weight: 500;
+  letter-spacing: funcs.px-rem(0.12);
+  line-height: 1.1;
+  text-align: center;
+
+  color: var(--text-contrast);
+}
+
+.actions__grid {
+  display: grid;
+
+  gap: funcs.px-rem(32);
+
+  @include breakpoints.media-screen(breakpoints.$xs) {
+    grid-template-columns: 1fr;
+
+    & > * {
+      aspect-ratio: 2 / 1;
+    }
+  }
+  @include breakpoints.media-screen(breakpoints.$md) {
+    grid-template-columns: repeat(2, 1fr);
+
+    & > * {
+      aspect-ratio: 1 / 1;
+    }
+  }
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

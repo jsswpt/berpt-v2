@@ -1,0 +1,22 @@
+@use "../../modules/breakpoints.module";
+@use "../../modules/funcs.module";
+
+.container {
+  display: flex;
+  margin: 0 auto;
+
+  @include breakpoints.media-screen(breakpoints.$xs) {
+    padding: 0 funcs.px-rem(16);
+    width: 100%;
+  }
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    width: 100%;
+  }
+  @include breakpoints.media-screen(breakpoints.$md) {
+    padding: 0;
+    width: 88.8888888889vw;
+  }
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    width: funcs.px-rem(960);
+  }
+}

@@ -1,0 +1,42 @@
+@use "../../modules/breakpoints.module";
+@use "../../modules/funcs.module";
+
+.plate_button_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.25);
+
+  font-weight: 400;
+  letter-spacing: funcs.px-rem(0.25);
+  line-height: 1.1;
+  text-align: center;
+  color: var(--text-primary);
+
+  &:active {
+    color: var(--text-secondary);
+  }
+
+  @include breakpoints.media-screen(breakpoints.$xs) {
+    font-size: funcs.px-rem(32);
+    border-radius: 32px;
+  }
+  @include breakpoints.media-screen(breakpoints.$md) {
+    border-radius: 64px;
+  }
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    padding: funcs.px-rem(16);
+    font-size: funcs.px-rem(56);
+  }
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+.fit {
+  padding: funcs.px-rem(16) funcs.px-rem(32);
+}

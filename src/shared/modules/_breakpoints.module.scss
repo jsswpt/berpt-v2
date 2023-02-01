@@ -1,0 +1,12 @@
+@use "./funcs.module";
+
+$xs: 0;
+$sm: funcs.px-rem(576);
+$md: funcs.px-rem(768);
+$lg: funcs.px-rem(1080);
+
+@mixin media-screen($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
